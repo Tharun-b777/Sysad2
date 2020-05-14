@@ -1,0 +1,2 @@
+00 00 * * * bash 3.autoschedule
+00 06 * * * bash 4.attendance

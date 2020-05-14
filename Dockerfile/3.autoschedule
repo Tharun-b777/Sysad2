@@ -1,0 +1,7 @@
+#!/bin/bash
+var=$(date '+%Y-%m-%d')
+for i in {1..50};do
+grep $var position.log | grep -w "Army${i}" | cut -f 1,4,5 -d' ' > /home/Army${i}/post_alloted
+grep $var position.log | grep -w "Navy${i}" | cut -f 1,4,5 -d' ' > /home/Navy${i}/post_alloted
+grep $var position.log | grep -w "AirForce${i}" | cut -f 1,4,5 -d' ' > /home/AirForce${i}/post_alloted
+done

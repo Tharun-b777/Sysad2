@@ -1,0 +1,5 @@
+#!/bin/bash
+var=$(date '+%Y-%m-%d')
+grep $var attendance.log | grep "Army" | grep "YES" | cut -f 2 -d' ' > /home/ArmyGeneral/attendance_record
+grep $var attendance.log | grep "Navy" | grep "YES" | cut -f 2 -d' ' > /home/NavyMarshal/attendance_record
+grep $var attendance.log | grep "AirForce" | grep "YES" | cut -f 2 -d' ' > /home/AirForceChief/attendance_record

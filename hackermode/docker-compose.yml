@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/:ro
+      - /home/ChiefCommander/datadir:/var/lib/mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: my_secret_pw_shh
+    ports:
+      - "9906:3306"
+  web:
+    build: ./
+    container_name: php_web
+    depends_on:
+      - db
+    links:
+      - db
+    volumes:
+      - ./php/:/var/www/html/:z
+    ports:
+      - "3333:80"
+    stdin_open: true
+    tty: true

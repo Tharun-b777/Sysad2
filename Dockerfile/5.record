@@ -1,0 +1,85 @@
+#!/bin/bash
+saturday=$(date -d 'last Sunday - 1 day' '+%Y-%m-%d')
+friday=$(date -d 'last Sunday - 2 days' '+%Y-%m-%d')
+thursday=$(date -d 'last Sunday - 3 day' '+%Y-%m-%d')
+wednesday=$(date -d 'last Sunday - 4 days' '+%Y-%m-%d')
+tuesday=$(date -d 'last Sunday - 5 day' '+%Y-%m-%d')
+monday=$(date -d 'last Sunday - 6 days' '+%Y-%m-%d')
+sunday=$(date -d 'last Sunday - 7 day' '+%Y-%m-%d')
+case $USER in
+  AirForceChief)
+  if [ $1 -eq 1 ]
+  then
+  grep $monday attendance.log | grep "AirForce"
+  elif [ $1 -eq 2 ]
+  then
+  grep $tuesday attendance.log | grep "AirForce"
+  elif [ $1 -eq 3 ]
+  then
+  grep $wednesday attendance.log | grep "AirForce"
+  elif [ $1 -eq 4 ]
+  then
+  grep $thursday attendance.log | grep "AirForce"
+  elif [ $1 -eq 5 ]
+  then
+  grep $friday attendance.log | grep "AirForce"
+  elif [ $1 -eq 6 ]
+  then
+  grep $saturday attendance.log | grep "AirForce"
+  elif [ $1 -eq 7 ]
+  then
+  grep $sunday attendance.log | grep "AirForce"
+  else
+  echo "INVALID ENTRY"
+fi ;;
+  NavyMarshal)
+  if [ $1 -eq 1 ]
+  then
+  grep $monday attendance.log | grep "Navy"
+  elif [ $1 -eq 2 ]
+  then
+  grep $tuesday attendance.log | grep "Navy"
+  elif [ $1 -eq 3 ]
+  then
+  grep $wednesday attendance.log | grep "Navy"
+  elif [ $1 -eq 4 ]
+  then
+  grep $thursday attendance.log | grep "Navy"
+  elif [ $1 -eq 5 ]
+  then
+  grep $friday attendance.log | grep "Navy"
+  elif [ $1 -eq 6 ]
+  then
+  grep $saturday attendance.log | grep "Navy"
+  elif [ $1 -eq 7 ]
+  then
+  grep $sunday attendance.log | grep "Navy"
+  else
+  echo "INVALID ENTRY"
+fi;;
+  ArmyGeneral)
+  if [ $1 -eq 1 ]
+  then
+  grep $monday attendance.log | grep "Army"
+  elif [ $1 -eq 2 ]
+  then
+  grep $tuesday attendance.log | grep "Army"
+  elif [ $1 -eq 3 ]
+  then
+  grep $wednesday attendance.log| grep "Army"
+  elif [ $1 -eq 4 ]
+  then
+  grep $thursday attendance.log | grep "Army"
+  elif [ $1 -eq 5 ]
+  then
+  grep $friday attendance.log | grep 'Army'
+  elif [ $1 -eq 6 ]
+  then
+  grep $saturday attendance.log | grep "Army"
+  elif [ $1 -eq 7 ]
+  then
+  grep $sunday attendance.log | grep "Army"
+  else
+  echo "INVALID ENTRY"
+fi;;
+esac

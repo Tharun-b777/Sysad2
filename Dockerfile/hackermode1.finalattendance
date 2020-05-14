@@ -1,0 +1,12 @@
+#!/bin/bash
+declare -a array
+IFS=$'\n'
+Dates=($(cut -f 1 -d' ' attendance.log | uniq ))
+unset IFS
+length=${#Dates[@]}
+for(( i=0; i<$length; i++ ))
+do
+grep ${Dates[i]} attendance.log | grep Army >> /home/ChiefCommander/attendance_report
+grep ${Dates[i]} attendance.log | grep Navy >> /home/ChiefCommander/attendance_report
+grep ${Dates[i]} attendance.log | grep Air >> /home/ChiefCommander/attendance_report
+done

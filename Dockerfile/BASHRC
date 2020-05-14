@@ -1,0 +1,8 @@
+#!/bin/bash
+alias userGenerate="bash 1.usergenerate"
+alias permit="bash 2.permit"
+alias autoSchedule="bash 3.autoschedule"
+alias attendance="bash 4.attendance"
+alias record="bash 5.record"
+alias finalattendance="bash hackermode1.finalattendance"
+alias nearest="bash hackermode2.nearest10"

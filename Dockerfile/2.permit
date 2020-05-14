@@ -1,0 +1,22 @@
+#!/bin/bash
+#giving access permissions of troop chiefs homedirectory to chiefcommander
+chmod -R 700 /home/ChiefCommander
+chmod -R 770 /home/ArmyGeneral
+usermod -aG ArmyGeneral ChiefCommander
+chmod -R 770 /home/NavyMarshal
+usermod -aG NavyMarshal ChiefCommander
+chmod -R 770 /home/AirForceChief
+usermod -aG AirForceChief ChiefCommander
+#giving access permissions of soldiers homedirectory to respective troop chiefs and chief commander
+for i in {1..50}
+do
+chmod -R 770 /home/Army$i
+chmod -R 770 /home/Navy$i
+chmod -R 770 /home/AirForce$i
+usermod -aG Army$i ChiefCommander
+usermod -aG AirForce$i ChiefCommander
+usermod -aG Navy$i ChiefCommander
+usermod -aG Army$i ArmyGeneral
+usermod -aG Navy$i NavyMarshal
+usermod -aG AirForce$i AirForceChief
+done

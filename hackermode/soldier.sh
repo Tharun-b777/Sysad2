@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat <<EOF> /home/tharun/Desktop/light.conf
+cat <<EOF> /etc/var/www/soldier.io
 <VirtualHost *:80>
     ServerAdmin webmaster@localhost
     ServerName soldier.io
